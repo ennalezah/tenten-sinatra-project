@@ -24,7 +24,7 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = @user.id
       redirect '/dashboard'
     else 
-      redirect '/signup'
+      # redirect '/signup'
     end
   end
 
@@ -33,10 +33,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do 
-    user = current_user
-
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    @user = User.find(params[:id])
+    if @user && current_user.authenticate(params[:password])
+      session[:user_id] = current_user.id
       redirect '/dashboard'
     else
       redirect '/login'
@@ -49,6 +48,11 @@ class ApplicationController < Sinatra::Base
     else
       redirect '/login'
     end
+  end
+
+  get '/logout' do
+    session.clear
+    redirect '/'
   end
 
 
