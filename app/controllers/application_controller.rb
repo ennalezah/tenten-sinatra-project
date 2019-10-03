@@ -9,13 +9,17 @@ class ApplicationController < Sinatra::Base
     enable :sessions
   end
 
-  get "/" do
+  get '/' do
     erb :index
   end
 
   get '/signup' do 
     erb :'/users/signup'
   end
+
+  # get '/signup/error'
+  #   erb :'/users/signup_error'
+  # end
 
   post '/signup' do
     @user = User.create(params)
@@ -24,9 +28,11 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = @user.id
       redirect '/dashboard'
     else 
-      # redirect '/signup'
+      erb :'/users/signup_error'
     end
   end
+
+
 
   get '/login' do
     erb :'/users/login'
@@ -34,8 +40,8 @@ class ApplicationController < Sinatra::Base
 
   post '/login' do 
     @user = User.find(params[:id])
-    if @user && current_user.authenticate(params[:password])
-      session[:user_id] = current_user.id
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
       redirect '/dashboard'
     else
       redirect '/login'
@@ -66,5 +72,4 @@ class ApplicationController < Sinatra::Base
       User.find(session[:user_id])
     end
   end
-
 end
