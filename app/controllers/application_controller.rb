@@ -28,6 +28,21 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get '/login' do
+    erb :'/users/dashboard'
+  end
+
+  post '/login' do 
+    user = current_user
+
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect '/dashboard'
+    else
+      redirect '/login'
+    end
+  end
+
   get '/dashboard' do 
     if logged_in?
       erb :'/users/dashboard'
