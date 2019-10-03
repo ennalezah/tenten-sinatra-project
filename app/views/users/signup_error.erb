@@ -5,11 +5,11 @@
     <label class="label">Full Name</label>
     <% if @user.errors.include?(:name) %>
       <div class="control">     
-        <input class="input is-danger" type="text" name="name" value="<%= @user.name %>">      
+        <input class="input is-danger" type="text" name="name" value="<%= @user.name %>" required>      
       </div>
     <% else %> 
       <div class="control">     
-        <input class="input" type="text" name="name" value="<%= @user.name %>">      
+        <input class="input" type="text" name="name" value="<%= @user.name %>" required>      
       </div>
     <% end %> 
 
@@ -26,14 +26,14 @@
     <label class="label">Email</label>
     <% if @user.errors.include?(:email) %>
       <div class="control has-icons-left">
-        <input class="input is-danger" type="email" name="email" value="<%= @user.email %>">
+        <input class="input is-danger" type="email" name="email" value="<%= @user.email %>" required>
         <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
         </span>
       </div>
     <% else %>
       <div class="control has-icons-left">
-        <input class="input is-danger" type="email" name="email" value="<%= @user.email %>">
+        <input class="input is-danger" type="email" name="email" value="<%= @user.email %>" required>
         <span class="icon is-small is-left">
         <i class="fas fa-envelope"></i>
         </span>
@@ -53,14 +53,14 @@
     <label class="label">Username</label>
       <% if @user.errors.include?(:username) %>
         <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
+          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>" required>
           <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
           </span>
         </div>
       <% else %>  
         <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
+          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>" required>
           <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
           </span>
@@ -80,14 +80,14 @@
     <label class="label">Password</label>
     <% if @user.errors.include?(:password) %>
       <div class="control has-icons-left">
-        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>">
+        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>" required>
         <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>
       </div>
     <% else %>
       <div class="control has-icons-left">
-        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>">
+        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>" required>
         <span class="icon is-small is-left">
           <i class="fas fa-lock"></i>
         </span>

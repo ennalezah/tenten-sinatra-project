@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   validates :name,
   presence: { message: "Please enter your first and last name." },
-  format: /\A[a-zA-Z]+\z/, message: "Name can only contain letters. " }
+  format: /\A[a-zA-Z]+\z/, message: "Name can only contain letters." }
   length: { minimum: 2, message: "Name must be at least 2 characters long." }
 
   validates :email,
