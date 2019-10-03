@@ -1,0 +1,47 @@
+<form action="/signup" method="POST">
+  <div class="field">
+    <label class="label">Full Name</label>
+    <div class="control">
+      <input class="input" type="text" name="full_name">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control has-icons-left">
+      <input class="input" type="email" name="email">
+      <span class="icon is-small is-left">
+        <i class="fas fa-envelope"></i>
+      </span>
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Username</label>
+    <div class="control has-icons-left">
+      <input class="input" type="text" name="username">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control has-icons-left">
+      <input class="input" type="string" name="password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </div>
+  </div>
+
+  <div class="field is-horizontal">
+    <div class="control">
+      <input class="button is-link" type="submit" value="Sign Up">
+    </div>
+    <div class="control">
+      <button class="button is-text"><a href="/">Cancel</a></button>
+    </div>
+  </div>  
+</form>
