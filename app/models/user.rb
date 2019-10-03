@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   validates :name,
   presence: { message: "Please enter your first and last name." },
-  format: /\A[a-zA-Z]+\z/, message: "Name can only contain letters." }
+  format: { with: /\A[a-zA-Z\s]+\z/, message: "Name can only contain letters." },
   length: { minimum: 2, message: "Name must be at least 2 characters long." }
 
   validates :email,
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 
   validates :password,
     presence: { message: "Password cannot be blank" },
-    length: { in: 6..30, message: "Password must be between 6 and 30 characters and can contain uppercase/lowercase letters, numbers, and special characters."}, on: :account_setup
+    length: { in: 6..30, message: "Password must be between 6 and 30 characters and can contain uppercase/lowercase letters, numbers, and special characters." }, on: :account_setup
 
   has_secure_password
 

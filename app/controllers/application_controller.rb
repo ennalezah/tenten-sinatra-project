@@ -33,9 +33,10 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do 
-    @user = User.find(params[:id])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
+    user = User.find_by(username: params[:username])
+
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect '/dashboard'
     else
       erb :'/users/login_error'
@@ -43,7 +44,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/dashboard' do 
-    if logged_in?
+    if logged_in?(session)
       erb :'/users/dashboard'
     else
       redirect '/login'
@@ -58,7 +59,7 @@ class ApplicationController < Sinatra::Base
 
   # Helper Methods
   helpers do
-    def logged_in?
+    def logged_in?(session)
       !!session[:user_id]
     end
 
