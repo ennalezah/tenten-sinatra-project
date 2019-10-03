@@ -29,7 +29,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/login' do
-    erb :'/users/dashboard'
+    erb :'/users/login'
   end
 
   post '/login' do 
