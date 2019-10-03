@@ -17,10 +17,6 @@ class ApplicationController < Sinatra::Base
     erb :'/users/signup'
   end
 
-  # get '/signup/error'
-  #   erb :'/users/signup_error'
-  # end
-
   post '/signup' do
     @user = User.create(params)
 
@@ -32,8 +28,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-
-
   get '/login' do
     erb :'/users/login'
   end
@@ -44,7 +38,7 @@ class ApplicationController < Sinatra::Base
       session[:user_id] = @user.id
       redirect '/dashboard'
     else
-      redirect '/login'
+      erb :'/users/login_error'
     end
   end
 

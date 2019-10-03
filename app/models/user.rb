@@ -1,17 +1,20 @@
 class User < ActiveRecord::Base
-  validates :name, presence: { message: "Please enter your first and last name" }
+  validates :name,
+  presence: { message: "Please enter your first and last name." },
+  format: /\A[a-zA-Z]+\z/, message: "Name can only contain letters. " }
+  length: { minimum: 2, message: "Name must be at least 2 characters long." }
 
   validates :email,
-    presence: { message: "Please enter a valid email address (youremail@example.com)" },
-    uniqueness: { case_sensitive: false, message: "Email address already exists" }
+    presence: { message: "Please enter a valid email address (youremail@example.com)." },
+    uniqueness: { case_sensitive: false, message: "Email address already exists." }, on: :account_setup
 
   validates :username,
     presence: { message: "Username cannot be blank" },
-    uniqueness: { case_sensitive: false, message: "Username is already taken" }
+    uniqueness: { case_sensitive: false, message: "Username is already taken. Please choose another one." }, on: :account_setup
 
   validates :password,
     presence: { message: "Password cannot be blank" },
-    length: { minimum: 6, too_short: "Password must contain at least 6 characters" }
+    length: { in: 6..30, message: "Password must be between 6 and 30 characters and can contain uppercase/lowercase letters, numbers, and special characters."}, on: :account_setup
 
   has_secure_password
 
