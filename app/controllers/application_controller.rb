@@ -40,12 +40,12 @@ class ApplicationController < Sinatra::Base
       redirect '/dashboard'
     else
       erb :'/users/login_error'
-      # redirect '/login'
     end
   end
 
   get '/dashboard' do 
     if logged_in?(session)
+      @user = current_user(session)
       erb :'/users/dashboard'
     else
       redirect '/login'
@@ -64,7 +64,7 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
-    def current_user
+    def current_user(session)
       User.find(session[:user_id])
     end
   end
