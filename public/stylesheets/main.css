@@ -12,6 +12,8 @@
   }
 
   /* --- Welcome Page Styles --- */
+
+  .error-message {background-color: yellow;}
   body {
     background-color: #f0f0f0;
     color: #333;

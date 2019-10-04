@@ -1,59 +1,29 @@
 <h1 class="title">Log In</h1>
 
-<form action="/login" method="POST">
+<div class="notification is-danger">
+  <p>Invalid username or password. Please try again.</p>
+</div>
 
+<form action="/login" method="POST">
+  
   <div class="field">
     <label class="label">Username</label>
-      <% if @user.errors.include?(:username) %>
-        <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
-          <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-          </span>
-        </div>
-      <% else %>  
-        <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
-          <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-          </span>
-        </div>
-      <% end %>    
-
-    <p class="help is-danger">
-      <% if @user.errors.include?(:username) %>
-        <% @user.errors[:username].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </p>
+    <div class="control has-icons-left">
+      <input class="input" type="text" name="username">
+      <span class="icon is-small is-left">
+        <i class="fas fa-user"></i>
+      </span>
+    </div>
   </div>
 
   <div class="field">
     <label class="label">Password</label>
-    <% if @user.errors.include?(:password) %>
-      <div class="control has-icons-left">
-        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </div>
-    <% else %>
-      <div class="control has-icons-left">
-        <input class="input is-danger" type="string" name="password" value="<%= @user.password %>" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </div>
-    <% end %>
-
-    <p class="help is-danger">
-      <% if @user.errors.include?(:password) %>
-        <% @user.errors[:password].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </p>
+    <div class="control has-icons-left">
+      <input class="input" type="password" name="password">
+      <span class="icon is-small is-left">
+        <i class="fas fa-lock"></i>
+      </span>
+    </div>
   </div>
 
   <div class="field is-horizontal">
@@ -61,7 +31,7 @@
       <input class="button is-link" type="submit" value="Log in">
     </div>
     <div class="control">
-      <button class="button is-text"><a href="/">Cancel</a></button>
+      <button class="button is-text"><a href="/">Forgot Your Password?</a></button>
     </div>
   </div>  
 </form>
