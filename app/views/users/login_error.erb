@@ -6,14 +6,14 @@
     <label class="label">Username</label>
       <% if @user.errors.include?(:username) %>
         <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>" required>
+          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
           <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
           </span>
         </div>
       <% else %>  
         <div class="control has-icons-left">
-          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>" required>
+          <input class="input is-danger" type="text" name="username" value="<%= @user.username %>">
           <span class="icon is-small is-left">
           <i class="fas fa-user"></i>
           </span>
