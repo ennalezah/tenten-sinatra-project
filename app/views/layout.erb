@@ -51,11 +51,24 @@
         <%= yield %>        
       </div>
     </section>
+
     <footer class="footer">
-          <div class="content has-text-centered">
-            <p><strong>&copy; 2019 TenTen</p>
-          </div>
-        </footer>
+      <div class="content has-text-centered">
+        <p><strong>&copy; 2019 TenTen</p>
+      </div>
+    </footer>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
+    <%# Retrives selected file name on image upload %>
+    <script>
+      const fileInput = document.querySelector('#file-js-example input[type=file]');
+      fileInput.onchange = () => {
+        if (fileInput.files.length > 0) {
+          const fileName = document.querySelector('#file-js-example .file-name');
+          fileName.textContent = fileInput.files[0].name;
+        }
+      }
+    </script>
   </body>
 </html>
