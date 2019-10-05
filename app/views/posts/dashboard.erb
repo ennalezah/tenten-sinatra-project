@@ -6,7 +6,7 @@
 <hr>
 
 <% @posts.each do |post| %>
- <h1><%= post.title %></h1>
+ <h1><a href="/posts/<%= post.id %>"><%= post.title %></a></h1>
  <p><%= post.description %></p> 
  <p><%= post.url %></p>
  <hr>

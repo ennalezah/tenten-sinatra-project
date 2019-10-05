@@ -47,8 +47,12 @@ class PostsController < ApplicationController
 
   get '/posts/:id/edit' do 
     if logged_in?
-      @post = Post.find(params[:id])
-      erb :'/posts/edit'
+      @post = Post.find(params[:id])      
+      if @post && @post.user_id == current_user.id
+        erb :'/posts/edit'
+      else
+        redirect '/posts/dashboard'
+      end
     else
       redirect '/login'
     end
@@ -64,6 +68,16 @@ class PostsController < ApplicationController
       else
         erb :'/posts/post_error'
       end
+    else
+      redirect '/login'
+    end
+  end
+
+  delete '/posts/:id' do 
+    post = Post.find(params[:id])
+    if logged_in? && current_user.id == post.user_id
+      Post.delete(post)
+      redirect '/tweets'
     else
       redirect '/login'
     end
