@@ -7,11 +7,14 @@
     <title>TenTen | What Do You Recommend?</title>
     <%# <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"> %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
 
     <style>
       .error-message {background-color: rgba(255,56,96,0.7);}
-
+      .main-footer {
+        padding: 3rem 1.5rem;
+      }
+      
     </style>
 
   </head>
@@ -50,16 +53,16 @@
     
     <%= yield %>  
 
-    <footer class="footer">
+    <footer class="footer main-footer">
       <div class="content has-text-centered">
-        <p><strong>&copy; 2019 TenTen by Hazel Anne Villarel</p>
+        <p><strong>TenTen by Hazel Anne Villarel</p>
       </div>
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     
-    
-    <%# Retrives selected file name on image upload %>
+    <%# Retrieves selected file name on image upload %>
     <script>
       const fileInput = document.querySelector('#file-js-example input[type=file]');
       fileInput.onchange = () => {
@@ -69,5 +72,6 @@
         }
       }
     </script>
+
   </body>
 </html>
