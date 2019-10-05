@@ -5,7 +5,7 @@
     <label class="label">Title</label>
     <% if @post.errors.include?(:title) %>
       <div class="control">     
-        <input class="input is-danger" type="text" name="title" value="<%= @post.title %>" required>      
+        <input class="input is-danger" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point..." required>      
       </div>
     <% else %> 
       <div class="control">     
@@ -26,11 +26,11 @@
     <label class="label">Description</label>
     <% if @post.errors.include?(:description) %>
       <div class="control">
-        <textarea class="textarea" name="description" placeholder="Let everyone know what's so good about it, your favorite part, and any tips." value="<%= @post.description %>"></textarea>
+        <textarea class="textarea" name="description" placeholder="Let everyone know what's so good about it, your favorite part(s), and/or any pro tips..."></textarea>
       </div>
     <% else %>
       <div class="control">
-        <textarea class="textarea" name="description" placeholder="Let everyone know what's so good about it, your favorite part, and any tips." value="<%= @post.description %>"></textarea>
+        <textarea class="textarea" name="description" value="<%= @post.description %>"></textarea>
       </div>
     <% end %>    
 
@@ -47,47 +47,17 @@
     <label class="label">Link</label>
       <% if @post.errors.include?(:url) %>
         <div class="control">
-          <input class="input is-danger" type="text" name="url" value="<%= @post.url %>" required>
+          <input class="input is-danger" type="text" name="url" placeholder="Add a link to whatever you're recommending (e.g. a website, Yelp, Google, Amazon, etc.)..." required>
         </div>
       <% else %>  
-        <div class="control has-icons-left">
-          <input class="input" type="text" name="username" value="<%= @post.username %>" required>
-          <span class="icon is-small is-left">
-          <i class="fas fa-user"></i>
-          </span>
+        <div class="control">
+          <input class="input" type="text" name="url" value="<%= @post.url %>" required>
         </div>
       <% end %>    
 
     <p class="help is-danger">
-      <% if @post.errors.include?(:username) %>
-        <% @post.errors[:username].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="field">
-    <label class="label">Password</label>
-    <% if @post.errors.include?(:password) %>
-      <div class="control has-icons-left">
-        <input class="input is-danger" type="string" name="password" value="<%= @post.password %>" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </div>
-    <% else %>
-      <div class="control has-icons-left">
-        <input class="input" type="string" name="password" value="<%= @post.password %>" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </div>
-    <% end %>
-
-    <p class="help is-danger">
-      <% if @post.errors.include?(:password) %>
-        <% @post.errors[:password].each do |error| %>
+      <% if @post.errors.include?(:url) %>
+        <% @post.errors[:url].each do |error| %>
           <%= error %>
         <% end %>
       <% end %>
@@ -96,10 +66,7 @@
 
   <div class="field is-horizontal">
     <div class="control">
-      <input class="button is-link" type="submit" value="Sign up">
-    </div>
-    <div class="control">
-      <button class="button is-text"><a href="/">Cancel</a></button>
+      <input class="button is-link" type="submit" value="Submit">
     </div>
   </div>  
 </form>
