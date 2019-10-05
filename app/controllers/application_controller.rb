@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
 
     if @user.save
       session[:user_id] = @user.id
-      redirect '/dashboard'
+      redirect '/posts'
     else 
       erb :'/users/signup_error'
     end
@@ -37,20 +37,22 @@ class ApplicationController < Sinatra::Base
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect '/dashboard'
+      redirect '/posts'
     else
       erb :'/users/login_error'
     end
   end
 
-  get '/dashboard' do 
-    if logged_in?
-      @user = current_user
-      erb :'/users/dashboard'
-    else
-      redirect '/login'
-    end
-  end
+  # get '/dashboard' do 
+  #   if logged_in?
+  #     @user = current_user
+  #     @posts = Post.all
+  #     @users = User.all
+  #     erb :'/users/dashboard'
+  #   else
+  #     redirect '/login'
+  #   end
+  # end
 
   get '/logout' do
     session.clear

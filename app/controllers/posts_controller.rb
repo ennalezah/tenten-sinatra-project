@@ -1,8 +1,16 @@
 class PostsController < ApplicationController
   get '/posts' do
+    redirect '/posts/dashboard'
+  end
+
+  get '/posts/dashboard' do 
     if logged_in?
       @user = current_user
-      
+      @posts = Post.all
+      @users = User.all
+      erb :'/posts/dashboard'
+    else
+      redirect '/login'
     end
   end
 
@@ -15,22 +23,22 @@ class PostsController < ApplicationController
   end
 
   post '/posts' do
-    # @post = Post.new(params)
-
-    if !params.include?(nil)
-      @post = current_user.posts.new(params)
-      if @post.save
-        redirect to '/posts/#{@post.id}'
-      else
-        redirect '/posts/new'
-      end      
+    if logged_in?     
+      @post = Post.new(params)
+        if @post.save
+          redirect "/posts/#{@post.id}"
+        else
+          erb :'/posts/new_post_error'
+        end
+    else 
+      redirect '/login'
     end
   end
 
   get '/posts/:id' do
     if logged_in?
-      @user = current_user
       @post = Post.find(params[:id])
+      @post.user = current_user
       erb :'/posts/preview'
     else
       redirect '/login'

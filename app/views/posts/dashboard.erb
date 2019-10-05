@@ -5,10 +5,15 @@
 
 <hr>
 
-<% Post.all.each do |post| %>
+<% @posts.each do |post| %>
  <h1><%= post.title %></h1>
-
- <p><%= post.description %></p>
+ <p><%= post.description %></p> 
  <p><%= post.url %></p>
+ <hr>
+<% end %>
+
+<% @users.each do |user| %>
+ <h1><%= user.name %></h1>
+ <p><%= user.username %></p>
  <hr>
 <% end %>
