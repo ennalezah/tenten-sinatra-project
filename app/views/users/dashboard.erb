@@ -1,4 +1,14 @@
-<h1 class="title"><%= @user.name %>'s Dashboard</h1>
+<h1 class="title">Hello @<%= @user.username %>!</h1>
 
 <a href="/posts/new">New Recommendation</a>
 <a href="/logout">Log Out</a>
+
+<hr>
+
+<% Post.all.each do |post| %>
+ <h1><%= post.title %></h1>
+
+ <p><%= post.description %></p>
+ <p><%= post.url %></p>
+ <hr>
+<% end %>

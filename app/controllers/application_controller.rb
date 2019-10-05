@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/signup' do
-    @user = User.create(params)
+    @user = User.new(params)
 
     if @user.save
       session[:user_id] = @user.id
@@ -44,8 +44,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/dashboard' do 
-    if logged_in?(session)
-      @user = current_user(session)
+    if logged_in?
+      @user = current_user
       erb :'/users/dashboard'
     else
       redirect '/login'
@@ -60,11 +60,11 @@ class ApplicationController < Sinatra::Base
 
   # Helper Methods
   helpers do
-    def logged_in?(session)
+    def logged_in?
       !!session[:user_id]
     end
 
-    def current_user(session)
+    def current_user
       User.find(session[:user_id])
     end
   end

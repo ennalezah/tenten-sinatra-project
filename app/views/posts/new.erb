@@ -3,44 +3,26 @@
 <form action="/posts" method="POST">
 
   <div class="field">
-    <label class="label" name>Category</label>
+    <label class="label" name>Title</label>
     <div class="control">
-      <div class="select">
-        <select>
-          <option>Select dropdown</option>
-          <option>With options</option>
-        </select>
-      </div>
+      <input class="input" type="text" name="title">
     </div>
   </div>
 
   <div class="field">
-    <label class="label">Link</label>
-    <div class="control">
-      <input class="input" type="text" name="link">
-    </div>
-  </div>
-
-
-  <div class="field">
-    <label class="label">Message</label>
+    <label class="label">Description</label>
     <div class="control">
       <textarea class="textarea" name="description" placeholder="What's so good about it? Any tips?"></textarea>
     </div>
   </div>
 
   <div class="field">
-    <div id="file-js-example" class="file has-name">
-      <label class="file-label">
-      <input class="file-input" type="file" name="resume">
-        <span class="file-cta">
-          <span class="file-icon"><i class="fas fa-upload"></i></span>
-          <span class="file-label">Upload</span>
-        </span>
-        <span class="file-name">No file uploaded</span>
-      </label>
+    <label class="label">Url</label>
+    <div class="control">
+      <input class="input" type="text" name="url">
     </div>
   </div>
+
 
   <div class="field">
     <div class="control">
