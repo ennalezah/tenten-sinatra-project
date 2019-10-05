@@ -48,7 +48,7 @@ class PostsController < ApplicationController
   get '/posts/:id/edit' do 
     if logged_in?
       @post = Post.find(params[:id])      
-      if @post && @post.user_id == current_user.id
+      if @post
         erb :'/posts/edit'
       else
         redirect '/posts/dashboard'
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
   delete '/posts/:id' do 
     post = Post.find(params[:id])
-    if logged_in? && current_user.id == post.user_id
+    if logged_in?
       Post.delete(post)
       redirect '/tweets'
     else

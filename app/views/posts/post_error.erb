@@ -1,4 +1,4 @@
-<h1 class="title">New Recommendation</h1>
+<h1 class="title">Your Recommendation</h1>
 
 <form action="/posts" method="POST">
   <div class="field">
@@ -26,7 +26,7 @@
     <label class="label">Description</label>
     <% if @post.errors.include?(:description) %>
       <div class="control">
-        <textarea class="textarea" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips..." required></textarea>
+        <textarea class="textarea is-danger" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips..." required></textarea>
       </div>
     <% else %>
       <div class="control">
