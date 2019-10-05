@@ -47,17 +47,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-  # get '/dashboard' do 
-  #   if logged_in?
-  #     @user = current_user
-  #     @posts = Post.all
-  #     @users = User.all
-  #     erb :'/users/dashboard'
-  #   else
-  #     redirect '/login'
-  #   end
-  # end
-
   get '/logout' do
     session.clear
     redirect '/'

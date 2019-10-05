@@ -1,10 +1,5 @@
 <h1 class="title">Hello @<%= @user.username %>!</h1>
 
-<a href="/posts/new">New Recommendation</a>
-<a href="/logout">Log Out</a>
-
-<hr>
-
 <% @posts.each do |post| %>
  <h1><a href="/posts/<%= post.id %>"><%= post.title %></a></h1>
  <p><%= post.description %></p> 
