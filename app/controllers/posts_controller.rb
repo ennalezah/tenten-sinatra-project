@@ -7,7 +7,6 @@ class PostsController < ApplicationController
     if logged_in?
       @user = current_user
       @posts = Post.all
-      @users = User.all
       erb :'/posts/dashboard'
     else
       redirect '/login'

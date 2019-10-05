@@ -6,12 +6,12 @@ class User < ActiveRecord::Base
 
   validates :email,
     presence: { message: "Please enter a valid email address (youremail@example.com)." },
-    uniqueness: { case_sensitive: false, message: "Email address already exists."}
+    uniqueness: { case_sensitive: false, message: "Email address already exists." }
 
   validates :username,
     presence: { message: "Username cannot be left blank." },
     length: { minimum: 4, message: "Username must have at least 4 characters." },
-    format: { without: /\s/, message: "Username cannot have any spaces." },
+    format: { with: /\w/, message: "Username can only contain letter, numbers, and underscores." },
     uniqueness: { case_sensitive: false, message: "Username is already taken." }
 
   validates :password,
@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
     length: { in: 6..20, message: "Password must be between 6 and 20 characters." }
 
   has_secure_password
-
   has_many :posts
 
   def self.find_by_slug(slug)
