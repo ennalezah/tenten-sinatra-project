@@ -26,11 +26,11 @@
     <label class="label">Description</label>
     <% if @post.errors.include?(:description) %>
       <div class="control">
-        <textarea class="textarea" name="description" placeholder="Let everyone know what's so good about it, your favorite part(s), and/or any pro tips..."></textarea>
+        <textarea class="textarea" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips..." required></textarea>
       </div>
     <% else %>
       <div class="control">
-        <textarea class="textarea" name="description" value="<%= @post.description %>"></textarea>
+        <textarea class="textarea" name="description" required><%= @post.description %></textarea>
       </div>
     <% end %>    
 
