@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
     uniqueness: { case_sensitive: false, message: "Email address already exists."}
 
   validates :username,
-    presence: { message: "Username cannot be blank" },
+    presence: { message: "Username cannot be left blank." },
     length: { minimum: 4, message: "Username must have at least 4 characters." },
     format: { without: /\s/, message: "Username cannot have any spaces." },
     uniqueness: { case_sensitive: false, message: "Username is already taken." }
 
   validates :password,
-    presence: { message: "Password cannot be blank" },
+    presence: { message: "Password cannot be left blank." },
     length: { in: 6..20, message: "Password must be between 6 and 20 characters." }
 
   has_secure_password

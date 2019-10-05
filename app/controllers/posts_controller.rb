@@ -16,6 +16,7 @@ class PostsController < ApplicationController
 
   get '/posts/new' do
     if logged_in?
+      @user = current_user
       erb :'/posts/new'
     else
       redirect '/login'
@@ -38,12 +39,33 @@ class PostsController < ApplicationController
   get '/posts/:id' do
     if logged_in?
       @post = Post.find(params[:id])
-      @post.user = current_user
       erb :'/posts/preview'
     else
       redirect '/login'
     end
   end
 
+  get '/posts/:id/edit' do 
+    if logged_in?
+      @post = Post.find(params[:id])
+      @post.title = params[:title]
+      erb :'/posts/edit'
+    else
+      redirect '/login'
+    end
+  end
+
+  patch '/posts/:id' do
+    if logged_in?
+      @post = Post.find(params[:id])
+      if @post.update(params)
+        redirect "/posts/dashboard"
+      else
+        erb :'/posts/new_post_error'
+      end
+    else
+      redirect '/login'
+    end
+  end
 
 end
