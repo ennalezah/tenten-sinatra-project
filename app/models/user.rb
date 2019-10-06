@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :posts
+  has_secure_password
+
   validates :name,
   presence: { message: "Please enter your first and last name." },
   format: { with: /\A[a-zA-Z\s]+\z/, message: "Name can only contain letters." },
@@ -17,9 +20,6 @@ class User < ActiveRecord::Base
   validates :password,
     presence: { message: "Password cannot be left blank." },
     length: { in: 6..20, message: "Password must be between 6 and 20 characters." }
-
-  has_secure_password
-  has_many :posts
 
   def self.find_by_slug(slug)
     self.all.find {|user| user.slug == slug}
