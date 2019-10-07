@@ -1,10 +1,9 @@
-<h1 class="title"><%= @post.title %></h1>
-<p><%= @post.description %></p>
-<br>
+<section class="section page-section">
+  <div class="container">
+    <h1 class="title"><%= @post.title %></h1>
+    <p><%= @post.description %></p>
 
-
-
-  <div class="field is-grouped">
+    <div class="field is-grouped">
       <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button">Edit</a></p>
 
       <form action="/posts/<%= @post.id%>" method="POST">
@@ -16,4 +15,6 @@
           </div>
         </div>  
       </form>
+    </div>
   </div>
+</section>

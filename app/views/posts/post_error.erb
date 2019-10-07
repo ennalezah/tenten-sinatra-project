@@ -1,72 +1,115 @@
-<h1 class="title">Your Recommendation</h1>
+<section class="section page-section">
+  <div class="container">
+    <h1 class="title">Your Recommendation</h1>
 
-<form action="/posts" method="POST">
-  <div class="field">
-    <label class="label">Title</label>
-    <% if @post.errors.include?(:title) %>
-      <div class="control">     
-        <input class="input is-danger" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point..." required>      
-      </div>
-    <% else %> 
-      <div class="control">     
-        <input class="input" type="text" name="title" value="<%= @post.title %>" required>      
-      </div>
-    <% end %> 
-
-    <p class="help is-danger">
-      <% if @post.errors.include?(:title) %>
-        <% @post.errors[:title].each do |error| %>
-          <%= error %>
+    <form action="/posts" method="POST">
+      <div class="field">
+        <label class="label">Category</label>
+        <% if @post.errors.include?(:category) %>
+          <div class="control">
+            <div class="select is-danger">
+              <select name="category" required>
+                <option value="Please select one">Please select one</option>
+                <option value="Attractions">Attractions</option>
+                <option value="Bars">Bars</option>
+                <option value="Cafe">Cafes</option>
+                <option value="Museums">Museums</option>
+                <option value="Nightlife">Nightlife</option>
+                <option value="Parks">Parks</option>
+                <option value="Restaurants">Restaurants</option>
+              </select>
+            </div>
+          </div>
+        <% else %>
+          <div class="select">
+            <select name="category" value="<%= @post.category %>"required>
+              <option>Select a category</option>
+              <option value="Attractions">Attractions</option>
+              <option value="Bars">Bars</option>
+              <option value="Cafe">Cafes</option>
+              <option value="Museums">Museums</option>
+              <option value="Nightlife">Nightlife</option>
+              <option value="Parks">Parks</option>
+              <option value="Restaurants">Restaurants</option>
+            </select>
+          </div>
         <% end %>
-      <% end %>
-    </p>
-  </div>
-
-  <div class="field">
-    <label class="label">Description</label>
-    <% if @post.errors.include?(:description) %>
-      <div class="control">
-        <textarea class="textarea is-danger" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips..." required></textarea>
+          <p class="help is-danger">
+            <% if @post.errors.include?(:category) %>
+              <% @post.errors[:category].each do |error| %>
+                <%= error %>
+              <% end %>
+            <% end %>
+          </p>
       </div>
-    <% else %>
-      <div class="control">
-        <textarea class="textarea" name="description" required><%= @post.description %></textarea>
-      </div>
-    <% end %>    
 
-    <p class="help is-danger">
-      <% if @post.errors.include?(:description) %>
-        <% @post.errors[:description].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </p>
-  </div>
-  
-  <div class="field">
-    <label class="label">Link</label>
-      <% if @post.errors.include?(:url) %>
+      <div class="field">
+        <label class="label">Title</label>
+        <% if @post.errors.include?(:title) %>
+          <div class="control">     
+            <input class="input is-danger" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point..." required>      
+          </div>
+        <% else %> 
+          <div class="control">     
+            <input class="input" type="text" name="title" value="<%= @post.title %>" required>      
+          </div>
+        <% end %> 
+        <p class="help is-danger">
+          <% if @post.errors.include?(:title) %>
+            <% @post.errors[:title].each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Description</label>
+        <% if @post.errors.include?(:description) %>
+          <div class="control">
+            <textarea class="textarea is-danger" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips..." required></textarea>
+          </div>
+        <% else %>
+          <div class="control">
+            <textarea class="textarea" name="description" required><%= @post.description %></textarea>
+          </div>
+        <% end %>    
+
+        <p class="help is-danger">
+          <% if @post.errors.include?(:description) %>
+            <% @post.errors[:description].each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Link</label>
+        <% if @post.errors.include?(:url) %>
+          <div class="control">
+            <input class="input is-danger" type="text" name="url" placeholder="Add a link to whatever you're recommending (e.g. a website, Yelp, Google, Amazon, etc.)..." required>
+          </div>
+        <% else %>  
+          <div class="control">
+            <input class="input" type="text" name="url" value="<%= @post.url %>" required>
+          </div>
+        <% end %>    
+
+        <p class="help is-danger">
+          <% if @post.errors.include?(:url) %>
+            <% @post.errors[:url].each do |error| %>
+              <%= error %>
+            <% end %>
+          <% end %>
+        </p>
+      </div>
+
+      <div class="field is-horizontal">
         <div class="control">
-          <input class="input is-danger" type="text" name="url" placeholder="Add a link to whatever you're recommending (e.g. a website, Yelp, Google, Amazon, etc.)..." required>
+          <input class="button is-link" type="submit" value="Submit">
         </div>
-      <% else %>  
-        <div class="control">
-          <input class="input" type="text" name="url" value="<%= @post.url %>" required>
-        </div>
-      <% end %>    
-
-    <p class="help is-danger">
-      <% if @post.errors.include?(:url) %>
-        <% @post.errors[:url].each do |error| %>
-          <%= error %>
-        <% end %>
-      <% end %>
-    </p>
+      </div>  
+    </form>
   </div>
-
-  <div class="field is-horizontal">
-    <div class="control">
-      <input class="button is-link" type="submit" value="Submit">
-    </div>
-  </div>  
-</form>
+</section>

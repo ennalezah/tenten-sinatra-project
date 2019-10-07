@@ -3,24 +3,14 @@
     <h1 class="title">Hello, @<%= @user.username %>!</h1>
     <hr>
 
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-128x128">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content">
-          <% Post.all.each do |post| %>
-            <p>
-            <br>
-            <%= post.category %><br>
-            <%= post.description %>
-            </p>
-          <% end %>
-        </div>
-      </div>
-    </article>
+    <% Post.all.each do |post| %>
+      <p>
+      <%= post.category %><br>
+      <%= post.title %><br>
+      <%= post.description %><br>
+      <%= post.url %>
+      </p><br>
+    <% end %>
   </div>
 </section>
 

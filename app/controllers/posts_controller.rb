@@ -15,17 +15,29 @@ class PostsController < ApplicationController
 
   get '/posts/new' do
     if logged_in?
-      # @user = current_user
       erb :'/posts/new'
     else
       redirect '/login'
     end
   end
 
+  # post '/posts' do
+  #   if logged_in?
+  #     @post = current_user.posts.new(params)
+  #       if @post.save
+  #         redirect "/posts/#{@post.id}"
+  #       else
+  #         erb :'/posts/post_error'
+  #       end
+  #   else 
+  #     redirect '/login'
+  #   end
+  # end
+
   post '/posts' do
-    if logged_in?     
-      @post = Post.new(params)
-        if @post.save
+    if logged_in?
+      @post = current_user.posts.new(params)
+        if params.exclude?(nil) && @post.save
           redirect "/posts/#{@post.id}"
         else
           erb :'/posts/post_error'
@@ -76,7 +88,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     if logged_in?
       Post.delete(post)
-      redirect '/tweets'
+      redirect '/posts/dashboard'
     else
       redirect '/login'
     end
