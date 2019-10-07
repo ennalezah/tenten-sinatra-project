@@ -7,5 +7,5 @@ class Post < ActiveRecord::Base
 
   validates :description, presence: { message: "Description cannot be left blank." }
 
-  validates :url, presence: { message: "Link cannot be left blank and must have the correct format (https://thisisanexample.com)." }
+  validates :url, presence: { message: "Link cannot be left blank and must have the correct format (https://thisisanexample.com/)." }
 end

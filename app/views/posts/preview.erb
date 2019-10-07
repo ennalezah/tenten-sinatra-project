@@ -5,19 +5,26 @@
     <p><%= @post.description %></p>
     <p><%= @post.url %></p>
     <p><%= @post.user_id %></p>
+    <br>
 
+    <p>
+    <% if current_user.id == @post.user_id %>
     <div class="field is-grouped">
-      <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button">Edit</a></p>
-
-      <form action="/posts/<%= @post.id%>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-
-        <div class="field">
-          <div class="control">
-            <input class="button is-danger is-outlined" type="submit" value="Delete">
-          </div>
-        </div>  
-      </form>
+      <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button is-info">Edit post</a></p>
+      <p class="control"><a href="/posts/dashboard" class="button">Return to dashboard</a></p>      
     </div>
+
+    <form action="/posts/<%= @post.id%>" method="POST">
+      <div class="field">
+        <div class="control">
+          <input type="hidden" name="_method" value="DELETE">
+          <input class="button is-small is-danger is-inverted" type="submit" value="Delete">
+        </div>
+      </div>  
+    </form>
+    <% end %>
+    </p>
+
+
   </div>
 </section>
