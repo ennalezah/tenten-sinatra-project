@@ -3,12 +3,13 @@
     <h1 class="title">New Recommendation</h1>
 
     <form action="/posts" method="POST">
+      
       <div class="field">
         <label class="label">Category</label>
         <div class="control">
           <div class="select">
-            <select name="category" required>
-              <option value="Please select one">Please select one</option>
+            <select name="category">
+              <option value="select" id="select-error">Please select one:</option>
               <option value="Attractions">Attractions</option>
               <option value="Bars">Bars</option>
               <option value="Cafe">Cafes</option>
@@ -24,21 +25,21 @@
       <div class="field">
         <label class="label">Title</label>
         <div class="control">
-          <input class="input input-title" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point...">
+          <input class="input" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Description</label>
         <div class="control">
-          <textarea class="textarea" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and any pro tips...."></textarea>
+          <textarea class="textarea" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and any pro tips"></textarea>
         </div>
       </div>
 
       <div class="field">
         <label class="label">Link</label>
         <div class="control">
-          <input class="input" type="text" name="url" placeholder="Add a link to whatever it is you're recommending (e.g. a website, Yelp, Amazon, etc.)...">
+          <input class="input" type="url" name="url" placeholder="Add a link to what you're recommending (e.g. a website, Yelp profile, Google maps, etc.)">
         </div>
       </div>
 

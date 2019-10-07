@@ -1,7 +1,10 @@
 <section class="section page-section">
   <div class="container">
     <h1 class="title"><%= @post.title %></h1>
+    <p class="subtitle"><%= @post.category %></p>
     <p><%= @post.description %></p>
+    <p><%= @post.url %></p>
+    <p><%= @post.user_id %></p>
 
     <div class="field is-grouped">
       <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button">Edit</a></p>
