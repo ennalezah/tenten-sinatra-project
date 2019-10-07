@@ -1,17 +1,20 @@
 <section class="section page-section">
   <div class="container">
-    <h1 class="title">Hello, @<%= @user.username %>!</h1>
+    <h1 class="title">Hello, @<%= current_user.username %>!</h1>
     <hr>
 
-    <% Post.all.each do |post| %>
+    <% @posts.each do |post| %>
       <p>
-      <%= post.category %><br>
       <a href="/posts/<%= post.id %>"><%= post.title %></a><br>
+      <%= post.category %><br>
+      <%= post.user_id %><br>
       <%= post.description %><br>
       <%= post.url %>
       </p><br>
     <% end %>
   </div>
+
+
 </section>
 
 

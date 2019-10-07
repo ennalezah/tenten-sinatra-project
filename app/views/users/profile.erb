@@ -1,5 +1,11 @@
 <h1><%= @user.username %></h1>
 
-<% @user.tweets.each do |tweet| %>
-  <%= tweet.content  %>
+<% @user.posts.each do |post| %>
+  <p>
+    <a href="/posts/<%= post.id %>"><%= post.title %></a><br>
+    <%= post.category %><br>
+    <%= post.user.username %>
+    <%= post.description %><br>
+    <%= post.url %>
+    </p><br>
 <% end %>
