@@ -55,9 +55,12 @@ class ApplicationController < Sinatra::Base
     def logged_in?
       !!session[:user_id]
     end
-    
+
     def redirect_to_login
-      redirect '/login' if !logged_in? || current_user.nil?
+      if !logged_in? || current_user.nil?
+        session.clear
+        redirect '/login' 
+      end
     end
 
     def current_user

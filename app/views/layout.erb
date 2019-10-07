@@ -10,25 +10,56 @@
     <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
 
     <style>
+      body, html {
+        background-color: #FFFBF6;
+        color: #36454f;
+      }
       .error-message {
         background-color: rgba(255,56,96,0.7);
-        }
+      }
+      .main-navbar {
+        background: transparent; /*#F8F6F7;*/
+      }
       .main-footer {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
+        background: #36454f;
       }
       .page-section {
         margin-bottom: 30rem;
+      }
+      .cta-button {
+        background-color: #FFD950;
+        border-color: transparent;
+      }
+      .logo-title {
+        color: #BF5748;
+      }
+      .tite {
+        color: #36454f;
+      }
+      .footer-text {
+        color: #bcb6ae;
+      }
+      .submit-btn {
+        background-color: #B2CDE5;
+        color: #171820;
+      }
+      .hero.is-index {
+        background: url(https://lh4.googleusercontent.com/oE6eJB8t9tSxK-9QehSz_fWpDfjx6x0O6JwiapsfmVdj8E0O87KJ06DNJsg=w2400) center /cover;
+      }
+      .navbar-item a {
+        text-decoration: none;
       }
       
     </style>
 
   </head>
   <body class="has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar main-navbar is-fixed-top" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <h1 class="subtitle">TenTen</h1>
-          <%# <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> %>
+          <img src="https://lh3.googleusercontent.com/cDbfKVXA0GKDdgGHuWA3p9kWFavW6FdRVMzCzJfMFN7tGqaFps8lULlEQgU=w2400">&nbsp;
+          <h1 class="subtitle logo-title has-text-weight-bold">TenTen</h1>
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -48,7 +79,7 @@
                 <a class="button is-light" href="/logout">Log out</a>
               <% else %>
                 <a class="button is-white" href="/login">Log in</a>
-                <a class="button is-primary has-text-weight-bold" href="/signup">Sign up</a>
+                <a class="button cta-button has-text-weight-semibold" href="/signup">Sign up</a>
               <% end %>
             </div>
           </div>
@@ -60,7 +91,7 @@
 
     <footer class="footer main-footer">
       <div class="content has-text-centered">
-        <p><strong>TenTen by Hazel Anne Villarel</p>
+        <p class="footer-text has-text-weight-semibold">TenTen by Hazel Anne Villarel</p>
       </div>
     </footer>
 

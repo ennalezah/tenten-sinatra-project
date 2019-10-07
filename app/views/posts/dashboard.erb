@@ -1,7 +1,7 @@
 <section class="section page-section">
   <div class="container">
     <h1 class="title">Hello, @<%= current_user.username %>!</h1>
-    <p><a href="/<%= current_user.slug %>">View Your Profile</a></p>
+    <p><a href="/users/<%= current_user.slug %>">View Your Profile</a></p>
     <hr>
 
     <% @posts.each do |post| %>
