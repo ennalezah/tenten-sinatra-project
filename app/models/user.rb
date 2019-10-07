@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :username,
     presence: { message: "Username cannot be left blank." },
     length: { minimum: 4, message: "Username must have at least 4 characters." },
-    format: { with: /\w/, message: "Username can only contain letter, numbers, and underscores." },
+    format: { with: /\w/, message: "Username can only contain letters, numbers, and underscores." },
     uniqueness: { case_sensitive: false, message: "Username is already taken." }
 
   validates :password,
