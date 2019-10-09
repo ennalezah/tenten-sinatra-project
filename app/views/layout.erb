@@ -7,7 +7,6 @@
     <title>TenTen | What Do You Recommend?</title>
     <%# <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"> %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-    <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
 
     <style>
       body, html {
@@ -18,7 +17,7 @@
         background-color: rgba(255,56,96,0.7);
       }
       .main-navbar {
-        background: transparent; /*#F8F6F7;*/
+        background: none; /*#F8F6F7;*/
       }
       .main-footer {
         padding: 2rem 1.5rem;
@@ -42,24 +41,28 @@
       }
       .submit-btn {
         background-color: #B2CDE5;
+        border-color: transparent;
         color: #171820;
       }
-      .hero.is-index {
-        background: url(https://lh4.googleusercontent.com/oE6eJB8t9tSxK-9QehSz_fWpDfjx6x0O6JwiapsfmVdj8E0O87KJ06DNJsg=w2400) center /cover;
-      }
-      .navbar-item a {
+      .button.is-text {
         text-decoration: none;
+      }
+      .hero.index {
+        background: url(https://lh4.googleusercontent.com/oE6eJB8t9tSxK-9QehSz_fWpDfjx6x0O6JwiapsfmVdj8E0O87KJ06DNJsg=w2400) center / cover;
+      }
+      .left-col {
+      background: orange;
       }
       
     </style>
 
   </head>
-  <body class="has-navbar-fixed-top">
-    <nav class="navbar main-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <body>
+    <nav class="navbar main-navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
           <img src="https://lh3.googleusercontent.com/cDbfKVXA0GKDdgGHuWA3p9kWFavW6FdRVMzCzJfMFN7tGqaFps8lULlEQgU=w2400">&nbsp;
-          <h1 class="subtitle logo-title has-text-weight-bold">TenTen</h1>
+          <h1 class="title is-5 logo-title has-text-weight-bold">TenTen</h1>
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -74,9 +77,25 @@
           <div class="navbar-item">
             <div class="buttons">
               <% if logged_in? %>
-                <a class="button is-light" href="/posts/dashboard">Home</a>
-                <a class="button is-light" href="/posts/new">New Post</a>
-                <a class="button is-light" href="/logout">Log out</a>
+                <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
+                <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
+                <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a>
+                <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          <a class="navbar-item">
+            Jobs
+          </a>
+          <a class="navbar-item">
+            Contact
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+                <a class="button is-text has-text-weight-semibold" href="/logout">Log out</a>
               <% else %>
                 <a class="button is-white" href="/login">Log in</a>
                 <a class="button cta-button has-text-weight-semibold" href="/signup">Sign up</a>
@@ -86,6 +105,7 @@
         </div>
       </div>
     </nav>
+
     
     <%= yield %> 
 

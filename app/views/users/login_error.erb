@@ -1,37 +1,37 @@
-<h1 class="title">Log In</h1>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Log In</h1>
 
-<div class="notification is-danger">
-  <p>Invalid username or password. Please try again.</p>
-</div>
-
-<form action="/login" method="POST">
-  
-  <div class="field">
-    <label class="label">Username</label>
-    <div class="control has-icons-left">
-      <input class="input" type="text" name="username" required>
-      <span class="icon is-small is-left">
-        <i class="fas fa-user"></i>
-      </span>
+    <div class="notification is-danger">
+      <p>Invalid username or password. Please try again.</p>
     </div>
+
+    <form action="/login" method="POST">      
+      <div class="field">
+        <label class="label">Username</label>
+        <div class="control has-icons-left">
+          <input class="input" type="text" name="username" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control has-icons-left">
+          <input class="input" type="password" name="password" required>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </div>
+      </div>
+
+        <div class="control">
+          <input class="button submit-btn has-text-weight-semibold" type="submit" value="Log in">
+        </div>
+        
+       
+    </form>
   </div>
-
-  <div class="field">
-    <label class="label">Password</label>
-    <div class="control has-icons-left">
-      <input class="input" type="password" name="password" required>
-      <span class="icon is-small is-left">
-        <i class="fas fa-lock"></i>
-      </span>
-    </div>
-  </div>
-
-  <div class="field is-horizontal">
-    <div class="control">
-      <input class="button submit-btn has-text-weight-semibold" type="submit" value="Log in">
-    </div>
-    <div class="control">
-      <button class="button is-text"><a href="/">Forgot Your Password?</a></button>
-    </div>
-  </div>  
-</form>
+</section>

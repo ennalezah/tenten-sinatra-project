@@ -1,21 +1,44 @@
 <section class="section page-section">
   <div class="container">
-    <h1 class="title">Hello, @<%= current_user.username %>!</h1>
-    <p><a href="/users/<%= current_user.slug %>">View Your Profile</a></p>
-    <hr>
+  <h1 class="title">Hello, @<%= current_user.username %>!</h1>
+  <p class="subtitle"><a href="/users/<%= current_user.username %>">View your profile</a></p><br>
 
-    <% @posts.each do |post| %>
+  <div class="columns">
+    <div class="column is-one-quarter">    
+      <h3>Browse by Category</h3>
       <p>
-      <a href="/posts/<%= post.id %>"><%= post.title %></a><br>
-      <%= post.category %><br>
-      <%= post.user_id %><br>
-      <%= post.description %><br>
-      <%= post.url %>
-      </p><br>
-    <% end %>
+        <ul>
+          <li>Attractions</li>
+          <li>Bars</li>
+          <li>Cafes</li>
+          <li>Museums</li>
+          <li>Nightlife</li>
+          <li>Parks</li>
+          <li>Restaurants</li>
+        </ul>
+      </p>
+    </div>
+
+    <div class="column">
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <% @posts.each do |post| %>
+                  <small><a href="/users/<%= post.user.username %>">@<%= post.user.username %></a></small><br>
+                  <strong><%= post.category %> |</strong> <a href=""><strong><%= post.title %></strong></a><br>          
+                  <%= post.description %></strong>
+                  <hr>
+                <% end %>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>  
   </div>
+    
 
-
+  </div>
 </section>
-
-
