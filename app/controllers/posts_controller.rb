@@ -18,6 +18,48 @@ class PostsController < ApplicationController
     # end
   end
 
+  get '/posts/attractions' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Attractions"}
+    erb :'/posts/attractions'
+  end
+
+  get '/posts/bars' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Bars"}
+    erb :'/posts/bars'
+  end
+
+  get '/posts/cafes' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Cafes"}
+    erb :'/posts/cafes'
+  end
+
+  get '/posts/museums' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Musuems"}
+    erb :'/posts/museums'
+  end
+
+  get '/posts/nightlife' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Nightlife"}
+    erb :'/posts/nightlife'
+  end
+
+  get '/posts/parks' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Parks"}
+    erb :'/posts/parks'
+  end
+
+  get '/posts/restaurants' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Restaurants"}
+    erb :'/posts/restaurants'
+  end
+
   get '/posts/new' do
     redirect_to_login
     erb :'/posts/new'

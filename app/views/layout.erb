@@ -7,6 +7,7 @@
     <title>TenTen | What Do You Recommend?</title>
     <%# <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"> %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
     <style>
       body, html {
@@ -79,26 +80,11 @@
               <% if logged_in? %>
                 <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
                 <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
-                <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a>
-                <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-                <a class="button is-text has-text-weight-semibold" href="/logout">Log out</a>
+                <%# <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a> %>
+                <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
               <% else %>
-                <a class="button is-white" href="/login">Log in</a>
-                <a class="button cta-button has-text-weight-semibold" href="/signup">Sign up</a>
+                <a class="button is-white" href="/login">Log In</a>
+                <a class="button cta-button has-text-weight-semibold" href="/signup">Sign Up</a>
               <% end %>
             </div>
           </div>
@@ -116,7 +102,7 @@
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    
     
     <%# Retrieves selected file name on image upload %>
     <script>
