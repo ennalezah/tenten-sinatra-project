@@ -20,25 +20,25 @@ class PostsController < ApplicationController
 
   get '/posts/attractions' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Attractions"}
+    @posts = Post.all.select {|p| p[:category] == "Attraction"}
     erb :'/posts/attractions'
   end
 
   get '/posts/bars' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Bars"}
+    @posts = Post.all.select {|p| p[:category] == "Bar"}
     erb :'/posts/bars'
   end
 
-  get '/posts/cafes' do
+  get '/posts/cafes-and-bakeries' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Cafes"}
-    erb :'/posts/cafes'
+    @posts = Post.all.select {|p| p[:category] == "Cafe/Bakery"}
+    erb :'/posts/cafes_and_bakeries'
   end
 
   get '/posts/museums' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Musuems"}
+    @posts = Post.all.select {|p| p[:category] == "Museum"}
     erb :'/posts/museums'
   end
 
@@ -48,15 +48,15 @@ class PostsController < ApplicationController
     erb :'/posts/nightlife'
   end
 
-  get '/posts/parks' do
+  get '/posts/parks-and-recreation' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Parks"}
-    erb :'/posts/parks'
+    @posts = Post.all.select {|p| p[:category] == "Park/Recreation"}
+    erb :'/posts/parks_and_recreation'
   end
 
   get '/posts/restaurants' do
     redirect_to_login
-    @posts = Post.all.select {|p| p[:category] == "Restaurants"}
+    @posts = Post.all.select {|p| p[:category] == "Restaurant"}
     erb :'/posts/restaurants'
   end
 
@@ -139,7 +139,7 @@ class PostsController < ApplicationController
   patch '/posts/:id' do
     redirect_to_login
     @post = Post.find(params[:id])        
-    if @post
+    if @post.update(title: params[:title], description: params[:description], url: params[:url], category: params[:category])
       redirect "/posts/dashboard"
     else
       erb :'/posts/post_error'

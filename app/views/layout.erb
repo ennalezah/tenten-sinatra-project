@@ -49,48 +49,59 @@
         text-decoration: none;
       }
       .hero.index {
-        background: url(https://lh4.googleusercontent.com/oE6eJB8t9tSxK-9QehSz_fWpDfjx6x0O6JwiapsfmVdj8E0O87KJ06DNJsg=w2400) center / cover;
+        background: url(https://lh6.googleusercontent.com/8LeP5HcO6i6jThGBQyuyoD5nOiZhPU_1nqusH8wvSHvd-97y0oHESMw8KaI=w2400) center / cover;
       }
-      .left-col {
-      background: orange;
+      .container.index {
+        margin: 20px 0;
       }
-      
+      .column.index-left-img {
+        background: url(https://lh6.googleusercontent.com/Zb0Ti7VQXHO5ajWalHgR_bf4acxRwA0LwqLoXqhEVK2Nr8SwSpo1tA4iUH8=w2400) center / cover;
+        min-height: 50vh;
+        width: 100%;
+      }
+      .column.index-right-img {
+        background: url(https://lh3.googleusercontent.com/E13pUGY0a14IVmAU_vR9aWec_Mc82Pn0JXbVF6V46_MOwVA3NeCOgoKQ4sQ=w2400) center / cover;
+        min-height: 50vh;
+        width: 100%;
+      }      
     </style>
 
   </head>
   <body>
-    <nav class="navbar main-navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="https://lh3.googleusercontent.com/cDbfKVXA0GKDdgGHuWA3p9kWFavW6FdRVMzCzJfMFN7tGqaFps8lULlEQgU=w2400">&nbsp;
-          <h1 class="title is-5 logo-title has-text-weight-bold">TenTen</h1>
-        </a>
+  <div class="container">
+      <nav class="navbar main-navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img src="https://lh3.googleusercontent.com/cDbfKVXA0GKDdgGHuWA3p9kWFavW6FdRVMzCzJfMFN7tGqaFps8lULlEQgU=w2400">&nbsp;
+            <h1 class="title is-5 logo-title has-text-weight-bold">TenTen</h1>
+          </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <% if logged_in? %>
-                <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
-                <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
-                <%# <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a> %>
-                <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
-              <% else %>
-                <a class="button is-white" href="/login">Log In</a>
-                <a class="button cta-button has-text-weight-semibold" href="/signup">Sign Up</a>
-              <% end %>
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <% if logged_in? %>
+                  <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
+                  <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
+                  <%# <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a> %>
+                  <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
+                <% else %>
+                  <a class="button is-white" href="/login">Log In</a>
+                  <a class="button cta-button has-text-weight-semibold" href="/signup">Sign Up</a>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
 
     
     <%= yield %> 

@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
-  validates :category, exclusion: { in: %w(select), message: "Choose the category that best describes your recommendation." }
+  validates :category,
+    presence: { message: "You must select a category." },
+    exclusion: { in: %w(select), message: "Choose the category that best describes your recommendation." }
   
   validates :title, presence: { message: "Title cannot be left blank." }
 
