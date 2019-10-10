@@ -11,8 +11,12 @@
 
     <style>
       body, html {
-        background-color: #FFFBF6;
+        /* background-color: rgba(234,226,214,0.2); */
         color: #36454f;
+      }
+      .no-whitespace {
+        padding: 0;
+        margin: 0;
       }
       .error-message {
         background-color: rgba(255,56,96,0.7);
@@ -22,13 +26,13 @@
       }
       .main-footer {
         padding: 2rem 1.5rem;
-        background: #36454f;
+        background: #C0564A;
       }
       .page-section {
         margin-bottom: 30rem;
       }
       .cta-button {
-        background-color: #FFD950;
+        background-color: #F2C057;
         border-color: transparent;
       }
       .logo-title {
@@ -37,11 +41,8 @@
       .tite {
         color: #36454f;
       }
-      .footer-text {
-        color: #bcb6ae;
-      }
       .submit-btn {
-        background-color: #B2CDE5;
+        background-color: #C0564A;
         border-color: transparent;
         color: #171820;
       }
@@ -49,21 +50,41 @@
         text-decoration: none;
       }
       .hero.index {
-        background: url(https://lh6.googleusercontent.com/8LeP5HcO6i6jThGBQyuyoD5nOiZhPU_1nqusH8wvSHvd-97y0oHESMw8KaI=w2400) center / cover;
+        background: linear-gradient(0deg,rgba(0,0,0,0.35),rgba(0,0,0,0.3)), url(https://lh6.googleusercontent.com/8LeP5HcO6i6jThGBQyuyoD5nOiZhPU_1nqusH8wvSHvd-97y0oHESMw8KaI=w2400) center / cover;
       }
       .container.index {
         margin: 20px 0;
       }
-      .column.index-left-img {
+      .categories {
+        /* background: #F4F4EF; */
+        min-height: 100%;
+        padding: 6rem 0;
+      }
+      .categories-icon {
+        color: #C0564A;
+      }
+      .index-info-cols {
+        background: #F4F4EF;
+      }
+      .middle {
+        background: #FFF;
+      }
+      .column.index-top-img {
         background: url(https://lh6.googleusercontent.com/Zb0Ti7VQXHO5ajWalHgR_bf4acxRwA0LwqLoXqhEVK2Nr8SwSpo1tA4iUH8=w2400) center / cover;
         min-height: 50vh;
         width: 100%;
       }
-      .column.index-right-img {
+      .column.index-middle-img {
+        background: url(https://lh5.googleusercontent.com/VNLxmlTGCrVuCdh-Hfr2PWccBORK98ixxvgj5ckQ-60pjMUGRNgBtX-cdMA=w2400) center / cover;
+        min-height: 50vh;
+        width: 100%;
+      }     
+      .column.index-bottom-img {
         background: url(https://lh3.googleusercontent.com/E13pUGY0a14IVmAU_vR9aWec_Mc82Pn0JXbVF6V46_MOwVA3NeCOgoKQ4sQ=w2400) center / cover;
         min-height: 50vh;
         width: 100%;
-      }      
+      }    
+      
     </style>
 
   </head>
@@ -90,11 +111,10 @@
                 <% if logged_in? %>
                   <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
                   <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
-                  <%# <a class="button is-text has-text-weight-semibold" href="/posts/new">Browse by Category</a> %>
                   <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
                 <% else %>
                   <a class="button is-white" href="/login">Log In</a>
-                  <a class="button cta-button has-text-weight-semibold" href="/signup">Sign Up</a>
+                  <a class="button cta-button has-text-weight-medium" href="/signup">Sign Up</a>
                 <% end %>
               </div>
             </div>
@@ -107,8 +127,8 @@
     <%= yield %> 
 
     <footer class="footer main-footer">
-      <div class="content has-text-centered">
-        <p class="footer-text has-text-weight-semibold">TenTen by Hazel Anne Villarel</p>
+      <div class="content has-text-centered has-text-white">
+        <p class="has-text-weight-semibold">&copy; 2019 TenTen by Hazel Anne Villarel</p>
       </div>
     </footer>
 
