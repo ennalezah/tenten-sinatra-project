@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   get '/posts/dashboard' do 
     redirect_to_login
-    # @user = current_user
     @posts = Post.all
     erb :'/posts/dashboard'
 
@@ -28,6 +27,12 @@ class PostsController < ApplicationController
     redirect_to_login
     @posts = Post.all.select {|p| p[:category] == "Bar"}
     erb :'/posts/bars'
+  end
+
+  get '/posts/beauty-and-spas' do
+    redirect_to_login
+    @posts = Post.all.select {|p| p[:category] == "Beauty/Spa"}
+    erb :'/posts/beauty_and_spas'
   end
 
   get '/posts/cafes-and-bakeries' do
