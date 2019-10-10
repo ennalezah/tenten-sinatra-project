@@ -1,37 +1,41 @@
-<section class="section page-section">
-  <div class="container">
-    <h1 class="title has-text-weight-bold">Log In</h1>
+<section class="hero login is-large">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-half login-form">
+          <h3 class="title ">Log in</h3><hr>
+          <form action="/login" method="POST">      
+            <div class="field">
+              <label class="label ">Username</label>
+              <div class="control has-icons-left">
+                <input class="input" type="text" name="username">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+            </div>
 
-    <form action="/login" method="POST">      
-      <div class="field">
-        <label class="label">Username</label>
-        <div class="control has-icons-left">
-          <input class="input" type="text" name="username">
-          <span class="icon is-small is-left">
-            <i class="fas fa-user"></i>
-          </span>
-        </div>
+            <div class="field">
+              <label class="label ">Password</label>
+              <div class="control has-icons-left">
+                <input class="input" type="password" name="password">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-lock"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <br>
+                <input class="button btn has-text-weight-semibold is-fullwidth has-text-dark" type="submit" value="Log in">
+              </div>
+            </div>  
+          </form>
+        </div>>
       </div>
-
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control has-icons-left">
-          <input class="input" type="password" name="password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </div>
-      </div>
-
-      <div class="field is-horizontal">
-        <div class="control">
-          <input class="button submit-btn has-text-weight-semibold" type="submit" value="Log in">
-        </div>
-        <div class="control">
-          <a href="/signup" class="button is-text">Create a new account</a>
-        </div>
-      </div>  
-    </form>
+    </div>
   </div>
 </section>
+
 
