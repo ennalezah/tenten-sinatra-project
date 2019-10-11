@@ -17,35 +17,52 @@
         padding: 0;
         margin: 0;
       }
+      a, a:hover {
+        color: #D45547;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .logo:hover {
+        text-decoration: none;
+      }
       .error-message {
         background-color: #C0564A;
       }
       .main-footer {
         padding: 4rem 1.5rem;
-        background: #D45547;
+        background: #ED5752;
       }
       .page-section {
-        margin: 3rem 0 6rem;
+        /* margin: 3rem 0; */
+        /* background: rgba(226,223,162,0.5); #E2DFA2; */
+        background-color: #fff;
+        /* background-image: url("https://www.transparenttextures.com/patterns/light-wool.png"); */
       }
+
+      /* Buttons */
       .cta-btn {
-        background: #E1B80D;
+        background: #FDD475; /*#E1B80D;*/
         color: #363636;
-        border: 1px solid #E1B80D;
+        border: 2px solid #FDD475;
       }
       .cta-btn:hover {
         background: #fff;
-        color: #E1B80D;
-        border: 1px solid #E1B80D;
+        color: #363636;
+        border: 2px solid #FDD475;
+        text-decoration: none;
       }
-      .btn {
-        background-color: #E1B80D;
-        border-color: transparent;
-      }
-      /* .btn:hover {
-        background-color: #E1B80D;
+      .submit-btn {
+        background-color: #a1be95;
+        border: 2px solid #a1be95;
         color: #fff;
-        border-color: transparent;
-      } */
+      }
+      .submit-btn:hover {
+        background-color: #fff;
+        border: 2px solid #a1be95;
+        color: #363636;
+        text-decoration: none;
+      }
       .button.is-text {
         text-decoration: none;
       }
@@ -62,7 +79,7 @@
         padding: 8rem 0;
       }
       .categories-icon {
-        color: #D45547;
+        color: #ED5752;
       }
       .index-info-cols {
         background:  #EAE2D6; /*#F4F4EF;*/
@@ -92,7 +109,7 @@
         /* linear-gradient(0deg,rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  */
       }
       .login-form {
-        background: rgba(244,244,239,0.95);
+        background: rgba(255,255,255,0.95);
         padding: 4rem 2.5rem;
         margin: 0 auto;
       }
@@ -112,9 +129,9 @@
   <div class="container">
       <nav class="navbar main-navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="/">
+          <a class="navbar-item logo" href="/">
             <img src="https://lh3.googleusercontent.com/cDbfKVXA0GKDdgGHuWA3p9kWFavW6FdRVMzCzJfMFN7tGqaFps8lULlEQgU=w2400">&nbsp;
-            <h1 class="title is-5 logo-title has-text-weight-bold">TenTen</h1>
+            <h1 class="title is-5 has-text-weight-bold">TenTen</h1>
           </a>
 
           <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -130,11 +147,11 @@
               <div class="buttons">
                 <% if logged_in? %>
                   <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
-                  <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
-                  <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
+                  <a class="button is-text has-text-weight-semibold" href="/posts/new">Create new post</a>
+                  <a class="button is-text has-text-weight-semibold" href="/logout">Log out</a>
                 <% else %>
-                  <a class="button is-white" href="/login">Log In</a>
-                  <a class="button cta-btn has-text-weight-medium" href="/signup">Sign Up</a>
+                  <a class="button is-text" href="/login">Log in</a>
+                  <a class="button cta-btn has-text-weight-medium" href="/signup">Sign up</a>
                 <% end %>
               </div>
             </div>
@@ -148,7 +165,7 @@
 
     <footer class="footer main-footer">
       <div class="content has-text-centered has-text-white">
-        <p class="has-text-weight-semibold">&copy; 2019 TenTen by Hazel Anne Villarel</p>
+        <p class="has-text-weight-semibold">&copy; 2019 TenTen by Hazel Anne Villareal</p>
       </div>
     </footer>
 

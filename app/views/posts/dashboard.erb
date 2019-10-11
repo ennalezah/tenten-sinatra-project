@@ -1,11 +1,10 @@
 <section class="section page-section">
   <div class="container">
-    <h1 class="title">Hello, @<%= current_user.username %>!</h1>
-    <p class="subtitle is-6"><a href="/users/<%= current_user.username %>">View your profile</a></p><hr>
-
     <div class="columns">
       <div class="column is-one-quarter">    
-        <h3 class="title is-5 has-text-weight-bold">Browse by Category</h3>
+        <h3 class="title is-3 is-spaced">Hello, <%= current_user.name.split.first %>!<h3>
+        <p class="subtite is-6"><a href="/users/<%= current_user.username %>">View your profile</a></p><hr>
+        <h3 class="title is-6 has-text-weight-bold">Browse by Category</h3>
         <p>
           <a href="/posts/attractions" class="button is-text">Attractions</a><br>
           <a href="/posts/bars" class="button is-text">Bars</a><br>
@@ -19,8 +18,8 @@
         </p>
       </div>
 
-      <div class="column">
-        
+      <div class="column">   
+        <h3 class="title is-5"><i class="fas fa-angle-double-right"></i> ALL RECOMMENDATIONS</h3>     
         <% @posts.each do |post| %>
           <div class="box">
             <article class="media">
@@ -28,7 +27,7 @@
                 <div class="content">
                   <p>                  
                     <small><a href="/users/<%= post.user.username %>"><%= post.user.username %></a> recommended a(n) <%= post.category %></small><br><br>
-                    <a href="/posts/<%= post.id %>" class="has-text-weight-bold"><%= post.title %></a><br>          
+                    <a href="/posts/<%= post.id %>" class="is-size-6 has-text-weight-bold"><%= post.title %></a><br>          
                     <%= post.description %>                
                   </p>
                 </div>
@@ -37,6 +36,7 @@
           </div>
         <% end %>
       </div>  
+
     </div>
   </div>
 </section>
