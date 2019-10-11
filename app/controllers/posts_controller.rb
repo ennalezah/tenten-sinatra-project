@@ -92,7 +92,7 @@ class PostsController < ApplicationController
   patch '/posts/:id' do
     redirect_to_login
     @post = Post.find(params[:id])        
-    if @post.update(title: params[:title], description: params[:description], url: params[:url], category: params[:category])
+    if @post.update(location_name: params[:location_name], description: params[:description], url: params[:url], category: params[:category])
       redirect "/posts/dashboard"
     else
       erb :'/posts/post_error'

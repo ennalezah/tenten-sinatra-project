@@ -11,14 +11,14 @@
 
     <style>
       body, html {
-        color: #36454f;
+        /* background-color: #E4DACE; #36454f; */
       }
       .no-whitespace {
         padding: 0;
         margin: 0;
       }
       a, a:hover {
-        color: #ED5752;
+        color: #9A1B27;
       }
       a:hover {
         text-decoration: underline;
@@ -27,44 +27,46 @@
         text-decoration: none;
       }
       .error-message {
-        background-color: #C0564A;
+        background-color: #9A1B27;
       }
       .main-footer {
         padding: 4rem 1.5rem;
-        background: #3B3857;
-      }
-      .page-section {
-        /* margin: 3rem 0; */
-        /* background: rgba(226,223,162,0.5); #E2DFA2; */
-        background-color: #fff;
-        /* background-image: url("https://www.transparenttextures.com/patterns/light-wool.png"); */
+        background: #9A1B27;
       }
 
       /* Buttons */
       .cta-btn {
-        background: #F2DD66; /*#E1B80D;*/
+        background: #E5BB4B;
         color: #363636;
-        border: 2px solid #F2DD66;
+        border: 2px solid #E5BB4B;
       }
       .cta-btn:hover {
-        background: #fff;
+        background: #F2DD66;
         color: #363636;
         border: 2px solid #F2DD66;
         text-decoration: none;
       }
       .submit-btn {
-        background-color: #92AAC7;
-        border: 2px solid #92AAC7;
+        background-color: rgb(73,142,175);
+        border: 2px solid rgb(73,142,175);
         color: #fff;
       }
       .submit-btn:hover {
-        background-color: #fff;
-        border: 2px solid #92AAC7;
-        color: #363636;
+        background-color: rgba(73,142,175,0.65);
+        border: 2px solid rgba(73,142,175,0.65);
+        color: #FFF;
         text-decoration: none;
       }
-      .button.is-text {
+      .button, .button:hover, .button.is-text {
         text-decoration: none;
+      }
+      .button.category-btn, .button.category-btn:hover, .button.category-btn:active {
+        color: #9A1B27;
+        border: transparent;
+      }
+      
+      .button.category-btn:hover {
+        text-decoration: underline;
       }
 
       /* INDEX PAGE */
@@ -76,13 +78,13 @@
       }
       .categories {
         min-height: 100%;
-        padding: 8rem 0;
+        padding: 6rem 0;
       }
       .categories-icon {
         color: #9A1B27;
       }
       .index-info-cols {
-        background:  #EAE2D6;
+        background: #E4DACE;
       }
       .middle {
         background: #FFF;
@@ -130,7 +132,7 @@
       <nav class="navbar main-navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item logo" href="/">
-            <img src="https://lh3.googleusercontent.com/TFqKUFjlS5fIxX0UKEYUrBfYiibkW2dvnXhlsuOTpxtnOJsHbbD17rXO0lM=w2400">&nbsp;
+            <img src="https://lh6.googleusercontent.com/20Q6_dej013WYcw5n3G4dDGM-3PAHUu-sGr_RUd-_pozLYD2KlNAQBlce6w=w2400">&nbsp;
             <h1 class="title is-5 has-text-weight-bold">TenTen</h1>
           </a>
 
@@ -160,28 +162,14 @@
       </nav>
     </div>
 
-    
     <%= yield %> 
 
     <footer class="footer main-footer">
-      <div class="content has-text-centered has-text-dark">
+      <div class="content has-text-centered has-text-white">
         <p class="has-text-weight-semibold">&copy; 2019 TenTen by Hazel Anne Villareal</p>
       </div>
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    
-    
-    <%# Retrieves selected file name on image upload %>
-    <script>
-      const fileInput = document.querySelector('#file-js-example input[type=file]');
-      fileInput.onchange = () => {
-        if (fileInput.files.length > 0) {
-          const fileName = document.querySelector('#file-js-example .file-name');
-          fileName.textContent = fileInput.files[0].name;
-        }
-      }
-    </script>
-
   </body>
 </html>
