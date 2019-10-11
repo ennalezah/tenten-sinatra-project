@@ -1,19 +1,21 @@
 <section class="section page-section">
   <div class="container">
-    <h3 class="title is-3"><%= @post.title %></h3>
-    <p class="subtitle is-6"><%= @post.category %></p>
-    <p><%= @post.description %></p><br>
-    <p><a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></p>
-    <br>
+    <h3 class="is-size-3 has-text-weight-bold"><%= @post.title %></h3>   
+    <p class="is-size-5"><%= @post.description %></p><br>
+
+    <p>Category: <%= @post.category %></p>
+    <p>Link: <a href="<%= @post.url %>" target="_blank"><%= @post.url %></a></p><br>
+    
+    <hr>
 
     <p>
       <% if current_user.id == @post.user_id %>
       <div class="field is-grouped">
-        <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button is-info">Edit post</a></p>
+        <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button submit-btn is-text">Edit post</a></p>
         <p class="control"><a href="/posts/dashboard" class="button">Return to dashboard</a></p>      
       </div>
 
-      <form action="/posts/<%= @post.id%>" method="POST">
+      <form action="/posts/<%= @post.id %>" method="POST">
         <div class="field">
           <div class="control">
             <input type="hidden" name="_method" value="DELETE">

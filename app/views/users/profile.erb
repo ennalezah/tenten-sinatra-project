@@ -3,13 +3,20 @@
     <h3 class="title"><%= @user.username %>'s Recommendations</h3><hr>
 
     <% @user.posts.each do |post| %>
-      <p>
-        <a href="/posts/<%= post.id %>"><%= post.title %></a><br>
-        <%= post.category %><br>
-        <%= post.user.username %><br>
-        <%= post.description %><br>
-        <%= post.url %>
-      </p><br>
+      <div class="box">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p> 
+                <small><%= post.category %></small><br><br>              
+                <a href="/posts/<%= post.id %>" class="is-size-4 has-text-weight-bold"><%= post.title %></a><br>       
+                <%= post.description %><br><br>
+                <a href="<%= post.url %>" target="_blank">Visit website for more info.</a>            
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
     <% end %>
   </div>
 </section>
