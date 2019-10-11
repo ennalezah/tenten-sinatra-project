@@ -23,6 +23,9 @@
       a:hover {
         text-decoration: underline;
       }
+      hr {
+        background-color: #363636;
+      }
       .logo:hover {
         text-decoration: none;
       }
@@ -30,8 +33,11 @@
         background-color: #9A1B27;
       }
       .main-footer {
-        padding: 4rem 1.5rem;
-        background: #9A1B27;
+        padding: 3rem 1.5rem;
+        background-color: #FFF;
+      }
+      .page-section {
+        background-color: rgba(228,218,206,0.4)
       }
 
       /* Buttons */
@@ -49,7 +55,7 @@
       .submit-btn {
         background-color: rgb(73,142,175);
         border: 2px solid rgb(73,142,175);
-        color: #fff;
+        color: #FFF;
       }
       .submit-btn:hover {
         background-color: rgba(73,142,175,0.65);
@@ -165,7 +171,7 @@
     <%= yield %> 
 
     <footer class="footer main-footer">
-      <div class="content has-text-centered has-text-white">
+      <div class="content has-text-centered has-text-dark">
         <p class="has-text-weight-semibold">&copy; 2019 TenTen by Hazel Anne Villareal</p>
       </div>
     </footer>
