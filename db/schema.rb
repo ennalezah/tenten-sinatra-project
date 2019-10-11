@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191007040218) do
+ActiveRecord::Schema.define(version: 20191011090923) do
 
   create_table "posts", force: :cascade do |t|
-    t.string  "title"
+    t.string  "location_name"
     t.text    "description"
     t.string  "url"
     t.string  "category"
@@ -29,3 +29,5 @@ ActiveRecord::Schema.define(version: 20191007040218) do
   end
 
 end
+
+"Add a link to the website, Yelp profile, or Google directions for the place you're recommending (e.g. http://innout.com)"

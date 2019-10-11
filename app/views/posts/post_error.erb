@@ -47,19 +47,19 @@
       </div> 
 
       <div class="field">
-        <label class="label">Title</label>
-        <% if @post.errors.include?(:title) %>
+        <label class="label">Name of Location</label>
+        <% if @post.errors.include?(:location_name) %>
           <div class="control">     
-            <input class="input is-danger" type="text" name="title" placeholder="A good title is short, sweet, and straight to the point" required>    
+            <input class="input is-danger" type="text" name="location_name" required>    
           </div>
           <p class="help is-danger">            
-            <% @post.errors[:title].each do |error| %>
+            <% @post.errors[:location_name].each do |error| %>
               <%= error %>
             <% end %>            
           </p>
         <% else %> 
           <div class="control">     
-            <input class="input" type="text" name="title" value="<%= @post.title %>" required>      
+            <input class="input" type="text" name="location_name" value="<%= @post.location_name %>" required>      
           </div>
         <% end %>
       </div>
@@ -86,7 +86,7 @@
         <label class="label">Link</label>
         <% if @post.errors.include?(:url) %>
           <div class="control">
-            <input class="input is-danger" type="url" name="url" placeholder="Add a link to what you're recommending (e.g. a website, Yelp profile, Google maps, etc.)" required>
+            <input class="input is-danger" type="url" name="url" placeholder="Add a link to the website, Yelp profile, or Google directions for the place you're recommending (e.g. http://innout.com)" required>
           </div>
           <p class="help is-danger">            
             <% @post.errors[:url].each do |error| %>
