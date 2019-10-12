@@ -69,7 +69,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect "/posts/#{@post.id}"
     else
-      erb :'/posts/post_error'
+      erb :'/posts/new_post_error'
     end
   end
 
@@ -91,11 +91,16 @@ class PostsController < ApplicationController
 
   patch '/posts/:id' do
     redirect_to_login
-    @post = Post.find(params[:id])        
+    @post = Post.find(params[:id]) 
+    # @post.location_name = params[:location_name]
+    # @post.description = params[:description]
+    # @post.url = params[:url]
+    # @post.category = params[:category]
+    # @post_update = @post.update(location_name: params[:location_name], description: params[:description], url: params[:url], category: params[:category])
     if @post.update(location_name: params[:location_name], description: params[:description], url: params[:url], category: params[:category])
       redirect "/posts/dashboard"
     else
-      erb :'/posts/post_error'
+      erb :'/posts/edit_post_error'
     end
   end
 

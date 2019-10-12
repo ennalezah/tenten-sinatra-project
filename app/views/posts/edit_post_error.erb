@@ -1,0 +1,110 @@
+<section class="section page-section">
+  <div class="container">
+    <h1 class="title">Your Recommendation</h1>
+
+    <form action="/posts" method="POST">
+      <input id="hidden" type="hidden" name="_method" value="PATCH">
+      <div class="field">
+        <label class="label">Category</label>
+        <% if @post.errors.include?(:category) %>
+          <div class="control">
+            <div class="select" >
+              <select name="category" required>
+                <option value="">Please select one:</option>
+                <option value="Attraction">Attractions</option>
+                <option value="Bar">Bars</option>
+                <option value="Beauty/Spa">Beauty & Spas</option>
+                <option value="Cafe/Bakery">Cafes & Bakeries</option>
+                <option value="Museum">Museums</option>
+                <option value="Nightlife">Nightlife</option>
+                <option value="Park/Recreation">Parks & Recreation</option>
+                <option value="Restaurant" <% if @post.category == Restaurant %> selected >Restaurants</option>
+              </select>
+            </div>
+          </div>
+          <p class="help is-danger">            
+            <% @post.errors[:category].each do |error| %>
+              <%= error %>
+            <% end %>            
+          </p>         
+        <% else %>
+          <div class="control">
+            <div class="select">
+              <select name="category" required>
+                <option value="">Please select one:</option>
+                <option value="Attraction">Attractions</option>
+                <option value="Bar">Bars</option>
+                <option value="Beauty/Spa">Beauty & Spas</option>
+                <option value="Cafe/Bakery">Cafes & Bakeries</option>
+                <option value="Museum">Museums</option>
+                <option value="Nightlife">Nightlife</option>
+                <option value="Park/Recreation">Parks & Recreation</option>
+                <option value="Restaurant">Restaurants</option>
+              </select>
+            </div>
+          </div>            
+        <% end %>
+      </div> 
+
+      <div class="field">
+        <label class="label">Location Name</label>
+        <% if @post.errors.include?(:location_name) %>
+          <div class="control">     
+            <input class="input is-danger" type="text" name="location_name" required>    
+          </div>
+          <p class="help is-danger">            
+            <% @post.errors[:location_name].each do |error| %>
+              <%= error %>
+            <% end %>            
+          </p>
+        <% else %> 
+          <div class="control">     
+            <input class="input" type="text" name="location_name" value="<%= @post.location_name %>" required>      
+          </div>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <label class="label">Description</label>
+        <% if @post.errors.include?(:description) %>
+          <div class="control">
+            <textarea class="textarea is-danger" name="description" placeholder="Let everyone know what's so awesome about it, your favorite part(s), and/or any pro tips" required></textarea>
+          </div>
+          <p class="help is-danger">            
+            <% @post.errors[:description].each do |error| %>
+              <%= error %>
+            <% end %>            
+          </p>
+        <% else %>
+          <div class="control">
+            <textarea class="textarea" name="description" required><%= @post.description %></textarea>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <label class="label">URL</label>
+        <% if @post.errors.include?(:url) %>
+          <div class="control">
+            <input class="input is-danger" type="url" name="url" placeholder="Add a link to the website, Yelp profile, or Google directions to your recommendation (e.g. http://innout.com)" required>
+          </div>
+          <p class="help is-danger">            
+            <% @post.errors[:url].each do |error| %>
+              <%= error %>
+            <% end %>            
+          </p>
+        <% else %>  
+          <div class="control">
+            <input class="input" type="url" name="url" value="<%= @post.url %>" required>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="field is-horizontal">
+        <div class="control">
+          <input class="button submit-btn" type="submit" value="Update">
+        </div>
+      </div>  
+    </form>
+  </div>
+</section>
