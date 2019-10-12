@@ -12,7 +12,7 @@
       <% if current_user.id == @post.user_id %>
         <div class="field is-grouped">
           <p class="control"><a href="/posts/<%= @post.id %>/edit" class="button submit-btn">Edit post</a></p>
-          <p class="control"><a href="/posts/dashboard" class="button">Submit & return to dashboard</a></p>      
+          <p class="control"><a href="/posts/dashboard" class="button">Return to dashboard</a></p>      
         </div>
 
         <form action="/posts/<%= @post.id %>" method="POST">
