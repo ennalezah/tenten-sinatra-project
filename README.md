@@ -12,7 +12,7 @@ To access the project's directory, type into your terminal:
 
 ```$ cd tenten-sinatra-project ```
 
-Once you're in the correct directory, run the code below to make sure your and gems are the exact version needed.
+Once you're in the correct directory, run the code below to make sure the gems are the exact version needed.
 
 ```$ bundle install ```
 
