@@ -4,26 +4,25 @@
       <div class="columns">
         <div class="column is-half login-form">
           <h3 class="title ">Sign up</h3><hr>
+          
           <form action="/signup" method="POST">
+            
             <div class="field">
               <label class="label">Full Name</label>
               <% if @user.errors.include?(:name) %>
                 <div class="control">     
                   <input class="input is-danger" type="text" name="name" value="<%= @user.name %>" required>      
                 </div>
+              <p class="help is-danger">
+                  <% @user.errors[:name].each do |error| %>
+                    <%= error %>
+                  <% end %>
+              </p>
               <% else %> 
                 <div class="control">     
                   <input class="input" type="text" name="name" value="<%= @user.name %>" required>      
                 </div>
-              <% end %> 
-
-              <p class="help is-danger">
-                <% if @user.errors.include?(:name) %>
-                  <% @user.errors[:name].each do |error| %>
-                    <%= error %>
-                  <% end %>
-                <% end %>
-              </p>
+              <% end %>
             </div>
 
             <div class="field">
@@ -35,6 +34,11 @@
                   <i class="fas fa-envelope"></i>
                   </span>
                 </div>
+                <p class="help is-danger">                
+                  <% @user.errors[:email].each do |error| %>
+                    <%= error %>
+                  <% end %>                
+                </p>
               <% else %>
                 <div class="control has-icons-left">
                   <input class="input" type="email" name="email" value="<%= @user.email %>" required>
@@ -43,14 +47,6 @@
                   </span>
                 </div>
               <% end %>    
-
-              <p class="help is-danger">
-                <% if @user.errors.include?(:email) %>
-                  <% @user.errors[:email].each do |error| %>
-                    <%= error %>
-                  <% end %>
-                <% end %>
-              </p>
             </div>
             
             <div class="field">
@@ -62,6 +58,11 @@
                     <i class="fas fa-user"></i>
                     </span>
                   </div>
+                  <p class="help is-danger">
+                    <% @user.errors[:username].each do |error| %>
+                      <%= error %>
+                    <% end %>
+                  </p>
                 <% else %>  
                   <div class="control has-icons-left">
                     <input class="input" type="text" name="username" value="<%= @user.username %>" required>
@@ -69,15 +70,7 @@
                     <i class="fas fa-user"></i>
                     </span>
                   </div>
-                <% end %>    
-
-              <p class="help is-danger">
-                <% if @user.errors.include?(:username) %>
-                  <% @user.errors[:username].each do |error| %>
-                    <%= error %>
-                  <% end %>
                 <% end %>
-              </p>
             </div>
 
             <div class="field">
@@ -89,34 +82,29 @@
                     <i class="fas fa-lock"></i>
                   </span>
                 </div>
+                <p class="help is-danger">
+                  <% @user.errors[:password].each do |error| %>
+                    <%= error %>
+                  <% end %>
+                </p>
               <% else %>
                 <div class="control has-icons-left">
                   <input class="input" type="string" name="password" value="<%= @user.password %>" required>
                   <span class="icon is-small is-left">
-                    <i class="fas fa-lock"></i>
+                    <i cl ass="fas fa-lock"></i>
                   </span>
                 </div>
               <% end %>
-
-              <p class="help is-danger">
-                <% if @user.errors.include?(:password) %>
-                  <% @user.errors[:password].each do |error| %>
-                    <%= error %>
-                  <% end %>
-                <% end %>
-              </p>
             </div>
 
-            <div class="field is-horizontal">
+            <div class="field">
               <div class="control">
-                <input class="button submit-btn has-text-weight-semibold" type="submit" value="Sign up">
+                <input class="button submit-btn has-text-weight-semibold is-fullwidth" type="submit" value="Sign up">
               </div>
-              <div class="control">
-                <button class="button is-text"><a href="/">Cancel</a></button>
-              </div>
-            </div>  
+            </div> 
+
           </form>
-        </div>>
+        </div>
       </div>
     </div>
   </div>

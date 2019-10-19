@@ -1,14 +1,15 @@
 <section class="section page-section">
   <div class="container">
-    <h1 class="title">Your Recommendation</h1>
+    <h1 class="title">Edit Your Recommendation</h1>
 
-    <form action="/posts" method="POST">
+    <form action="/posts/<%= @post.id %>" method="POST">
       <input id="hidden" type="hidden" name="_method" value="PATCH">
+      
       <div class="field">
         <label class="label">Category</label>
         <% if @post.errors.include?(:category) %>
           <div class="control">
-            <div class="select" >
+            <div class="select">
               <select name="category" required>
                 <option value="">Please select one:</option>
                 <option value="Attraction">Attractions</option>
@@ -18,7 +19,7 @@
                 <option value="Museum">Museums</option>
                 <option value="Nightlife">Nightlife</option>
                 <option value="Park/Recreation">Parks & Recreation</option>
-                <option value="Restaurant" <% if @post.category == Restaurant %> selected >Restaurants</option>
+                <option value="Restaurant">Restaurants</option>
               </select>
             </div>
           </div>
@@ -102,7 +103,7 @@
 
       <div class="field is-horizontal">
         <div class="control">
-          <input class="button submit-btn" type="submit" value="Update">
+          <input class="button submit-btn has-text-weight-semibold is-marginless" type="submit" value="Update">
         </div>
       </div>  
     </form>

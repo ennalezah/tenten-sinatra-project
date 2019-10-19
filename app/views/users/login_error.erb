@@ -4,7 +4,8 @@
       <div class="columns">
         <div class="column is-half login-form">
           <h3 class="title ">Log in</h3><hr>
-          <div class="notification error-message has-text-white">
+          <div class="notification is-danger">
+            <button class="delete"></button>
             <p>Invalid username or password. Please try again.</p>
           </div>
           <form action="/login" method="POST">      
@@ -33,6 +34,7 @@
                 <input class="button submit-btn has-text-weight-semibold is-fullwidth" type="submit" value="Log in">
               </div>
             </div>
+            
           </form>
         </div>
       </div>

@@ -10,9 +10,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
     <style>
-      body, html {
-        /* background-color: #E4DACE; #36454f; */
-      }
       .no-whitespace {
         padding: 0;
         margin: 0;
@@ -29,15 +26,12 @@
       .logo:hover {
         text-decoration: none;
       }
-      .error-message {
-        background-color: #9A1B27;
-      }
       .main-footer {
         padding: 3rem 1.5rem;
         background-color: #FFF;
       }
       .page-section {
-        background-color: rgba(228,218,206,0.4)
+        background-color: rgba(228,218,206,0.45)
       }
 
       /* Buttons */
@@ -50,28 +44,27 @@
         background: #F2DD66;
         color: #363636;
         border: 2px solid #F2DD66;
-        text-decoration: none;
       }
       .submit-btn {
         background-color: rgb(73,142,175);
         border: 2px solid rgb(73,142,175);
         color: #FFF;
+        margin: 30px 0;
       }
       .submit-btn:hover {
-        background-color: rgba(73,142,175,0.65);
-        border: 2px solid rgba(73,142,175,0.65);
+        background-color: rgba(73,142,175,0.8);
+        border: 1px solid rgba(73,142,175,0.8);
         color: #FFF;
-        text-decoration: none;
-      }
-      .button, .button:hover, .button.is-text {
-        text-decoration: none;
+        text-decoration: underline;
       }
       .button.category-btn, .button.category-btn:hover, .button.category-btn:active {
         color: #9A1B27;
         border: transparent;
       }
-      
-      .button.category-btn:hover {
+      .button.is-text {
+        text-decoration: none;
+      }
+      .button.is-text:hover, .button.category-btn:hover, .button.is-danger:hover {
         text-decoration: underline;
       }
 
@@ -122,7 +115,7 @@
         margin: 0 auto;
       }
       .field {
-        margin: 1.5rem 0;
+        margin: 20px 0;
       }
 
       /* SIGN UP PAGE */
@@ -142,14 +135,14 @@
             <h1 class="title is-5 has-text-weight-bold">TenTen</h1>
           </a>
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-
         <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start"></div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
@@ -177,5 +170,34 @@
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+          $notification = $delete.parentNode;
+          $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+          });
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+          // Add a click event on each of them
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
+        }
+      });    
+    </script>
   </body>
 </html>
