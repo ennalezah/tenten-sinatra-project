@@ -1,0 +1,111 @@
+.no-whitespace {
+  padding: 0;
+  margin: 0;
+}
+a, a:hover {
+  color: #9A1B27;
+}
+a:hover {
+  text-decoration: underline;
+}
+hr {
+  background-color: #363636;
+}
+.logo:hover {
+  text-decoration: none;
+}
+.main-footer {
+  padding: 3rem 1.5rem;
+  background-color: #FFF;
+}
+.page-section {
+  background-color: rgba(228,218,206,0.45)
+}
+
+/* Buttons */
+.cta-btn {
+  background: #E5BB4B;
+  color: #363636;
+  border: 2px solid #E5BB4B;
+}
+.cta-btn:hover {
+  background: #F2DD66;
+  color: #363636;
+  border: 2px solid #F2DD66;
+}
+.submit-btn {
+  background-color: rgb(73,142,175);
+  border: 2px solid rgb(73,142,175);
+  color: #FFF;
+  margin: 30px 0;
+}
+.submit-btn:hover {
+  background-color: rgba(73,142,175,0.8);
+  border: 1px solid rgba(73,142,175,0.8);
+  color: #FFF;
+  text-decoration: underline;
+}
+.button.category-btn, .button.category-btn:hover, .button.category-btn:active {
+  color: #9A1B27;
+  border: transparent;
+}
+.button.is-text {
+  text-decoration: none;
+}
+.button.is-text:hover, .button.category-btn:hover, .button.is-danger:hover {
+  text-decoration: underline;
+}
+
+/* INDEX PAGE */
+.hero.index {
+  background: linear-gradient(0deg,rgba(0,0,0,0.35),rgba(0,0,0,0.3)), url(https://lh6.googleusercontent.com/8LeP5HcO6i6jThGBQyuyoD5nOiZhPU_1nqusH8wvSHvd-97y0oHESMw8KaI=w2400) center / cover;
+}
+.container.index {
+  margin: 20px 0;
+}
+.categories {
+  min-height: 100%;
+  padding: 6rem 0;
+}
+.categories-icon {
+  color: #9A1B27;
+}
+.index-info-cols {
+  background: #E4DACE;
+}
+.middle {
+  background: #FFF;
+}
+.column.index-top-img {
+  background: url(https://lh6.googleusercontent.com/Zb0Ti7VQXHO5ajWalHgR_bf4acxRwA0LwqLoXqhEVK2Nr8SwSpo1tA4iUH8=w2400) center / cover;
+  min-height: 50vh;
+  width: 100%;
+}
+.column.index-middle-img {
+  background: url(https://lh5.googleusercontent.com/VNLxmlTGCrVuCdh-Hfr2PWccBORK98ixxvgj5ckQ-60pjMUGRNgBtX-cdMA=w2400) center / cover;
+  min-height: 50vh;
+  width: 100%;
+}     
+.column.index-bottom-img {
+  background: url(https://lh3.googleusercontent.com/E13pUGY0a14IVmAU_vR9aWec_Mc82Pn0JXbVF6V46_MOwVA3NeCOgoKQ4sQ=w2400) center / cover;
+  min-height: 50vh;
+  width: 100%;
+}    
+
+/* LOGIN PAGE */
+.hero.login {
+  background: url(https://lh5.googleusercontent.com/fz4psbz-UYdvANAqpcK_ZtntdEdcZ6SaLTergOMnu97aq4rDVSv3PMJPepg=w2400) bottom / cover;
+}
+.login-form {
+  background: rgba(255,255,255,0.95);
+  padding: 4rem 2.5rem;
+  margin: 0 auto;
+}
+.field {
+  margin: 20px 0;
+}
+
+/* SIGN UP PAGE */
+.hero.signup {
+  background: url(https://lh4.googleusercontent.com/TN8ty-Hk6X2v-YvkwITK7H6nBvjxm6NlLgXmiSrLin100gE6LR6CaXi3Lm4=w2400) bottom / cover;
+}

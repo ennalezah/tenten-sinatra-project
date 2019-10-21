@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TenTen | What Do You Recommend?</title>
-    <%# <link rel="stylesheet" href="/stylesheets/main.css" type="text/css"> %>
+    <%# <link rel="stylesheet" href="./views/stylesheets/main.css" type="text/css"> %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
     <style>
       .no-whitespace {
@@ -107,7 +108,6 @@
       /* LOGIN PAGE */
       .hero.login {
         background: url(https://lh5.googleusercontent.com/fz4psbz-UYdvANAqpcK_ZtntdEdcZ6SaLTergOMnu97aq4rDVSv3PMJPepg=w2400) bottom / cover;
-        /* linear-gradient(0deg,rgba(0,0,0,0.25),rgba(0,0,0,0.25)),  */
       }
       .login-form {
         background: rgba(255,255,255,0.95);
@@ -121,9 +121,9 @@
       /* SIGN UP PAGE */
       .hero.signup {
         background: url(https://lh4.googleusercontent.com/TN8ty-Hk6X2v-YvkwITK7H6nBvjxm6NlLgXmiSrLin100gE6LR6CaXi3Lm4=w2400) bottom / cover;
-      }
-      
+      }      
     </style>
+
 
   </head>
   <body>
@@ -169,7 +169,7 @@
       </div>
     </footer>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
