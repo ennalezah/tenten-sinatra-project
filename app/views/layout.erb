@@ -48,13 +48,24 @@
       }
       .submit-btn {
         background-color: rgb(73,142,175);
-        border: 2px solid rgb(73,142,175);
+        border: none;
         color: #FFF;
         margin: 30px 0;
       }
       .submit-btn:hover {
         background-color: rgba(73,142,175,0.8);
-        border: 1px solid rgba(73,142,175,0.8);
+        border: none;
+        color: #FFF;
+        text-decoration: underline;
+      }
+      .delete-btn {
+        background-color: rgb(154,27,39);
+        border: none;
+        color: #FFF;
+      }
+      .delete-btn:hover {
+        background-color: rgba(154,27,39,0.8);
+        border: none;
         color: #FFF;
         text-decoration: underline;
       }
@@ -148,11 +159,12 @@
               <div class="buttons">
                 <% if logged_in? %>
                   <a class="button is-text has-text-weight-semibold" href="/posts/dashboard">Home</a>
-                  <a class="button is-text has-text-weight-semibold" href="/posts/new">Create new post</a>
-                  <a class="button is-text has-text-weight-semibold" href="/logout">Log out</a>
+                  <a class="button is-text has-text-weight-semibold" href="/posts/new">Create New Post</a>
+                  <a class="button is-text has-text-weight-semibold" href="/posts/im-feeling-lucky">I'm Feeling Lucky</a>
+                  <a class="button is-text has-text-weight-semibold" href="/logout">Log Out</a>
                 <% else %>
-                  <a class="button is-text" href="/login">Log in</a>
-                  <a class="button cta-btn has-text-weight-medium" href="/signup">Sign up</a>
+                  <a class="button is-text" href="/login">Log In</a>
+                  <a class="button cta-btn has-text-weight-medium" href="/signup">Sign Up</a>
                 <% end %>
               </div>
             </div>

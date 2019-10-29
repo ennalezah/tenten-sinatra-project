@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect '/posts/dashboard'
     end
+    
     erb :index
   end
 

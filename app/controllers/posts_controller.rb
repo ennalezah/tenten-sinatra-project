@@ -73,6 +73,12 @@ class PostsController < ApplicationController
     end
   end
 
+  get '/posts/im-feeling-lucky' do 
+    redirect_to_login
+    @post = Post.all.sample
+    erb :'posts/preview'
+  end
+
   get '/posts/:id' do
     redirect_to_login
     @post = Post.find(params[:id])

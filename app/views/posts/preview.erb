@@ -1,8 +1,8 @@
 <section class="section page-section">
   <div class="container">
-    <h3 class="is-size-3 has-text-weight-bold"><%= @post.location_name %></h3>   
-    <p><%= @post.category %></p><br>
+    <p><%= @post.category %> recommended by <a href="/users/<%= @post.user.username %>"><%= @post.user.username %></a></p><br>
 
+    <h3 class="is-size-3 has-text-weight-bold"><%= @post.location_name %></h3>
     <p class="is-size-5"><%= @post.description %></p><br>
     <p><strong><a href="<%= @post.url %>" target="_blank">Click here for more info.</a></strong></p>
     
@@ -23,7 +23,7 @@
         <form action="/posts/<%= @post.id %>" method="POST">
           <input type="hidden" name="_method" value="DELETE">
           <p class="control">        
-            <input class="button is-danger" type="submit" value="Delete">  
+            <input class="button delete-btn has-text-white" type="submit" value="Delete">  
           </p>
         </form>
       <% end %>
